@@ -1,0 +1,11 @@
+java -version
+cat /etc/os-release
+sudo dnf update -y
+dnf search java-17-amazon-corretto
+sudo dnf install java-17-amazon-corretto -y
+sudo wget -O /etc/yum.repos.d/jenkins.repo     https://pkg.jenkins.io/redhat/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io-2023.key
+sudo dnf install jenkins
+sudo systemctl start jenkins
+sudo systemctl status jenkins
+cat /var/lib/jenkins/secrets/initialAdminPassword
